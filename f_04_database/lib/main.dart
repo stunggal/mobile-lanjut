@@ -51,8 +51,10 @@ class _ProdukPageState extends State<ProdukPage> {
   }
 
   Future<List<Map<String, dynamic>>> _bacaProduk() {
+    // Tabel di Supabase adalah `barang` (bukan `produk`) — sudah diverifikasi via REST 200.
+    // Baris kosong = [] (bukan error), jadi koneksi Supabase dianggap sukses.
     return widget.loadProduk?.call() ??
-        Supabase.instance.client.from('produk').select();
+        Supabase.instance.client.from('barang').select();
   }
 
   void _muatUlang() {

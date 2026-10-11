@@ -16,7 +16,14 @@ void main() {
       MaterialApp(
         home: ProdukPage(
           loadProduk: () async => [
-            {'nama': 'Kopi', 'harga': 12000},
+            {
+              'id': 1,
+              'nama': 'Kopi',
+              'deskripsi': 'Kopi arabika',
+              'rating': 4.5,
+              'harga': 12000,
+              'stok': 10,
+            },
           ],
         ),
       ),
@@ -24,7 +31,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Kopi'), findsOneWidget);
-    expect(find.text('harga: 12000'), findsOneWidget);
+    expect(find.text('Rp 12000'), findsOneWidget);
   });
 
   testWidgets('menampilkan status kosong', (WidgetTester tester) async {
@@ -35,6 +42,6 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.text('Belum ada produk.'), findsOneWidget);
+    expect(find.text('Tidak ada produk tersedia'), findsOneWidget);
   });
 }

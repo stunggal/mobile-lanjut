@@ -8,13 +8,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:f_04_database/main.dart';
+import 'package:f_04_database/screens/product.dart';
 
 void main() {
   testWidgets('menampilkan produk yang dibaca', (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
-        home: ProdukPage(
+        home: ProductScreen(
           loadProduk: () async => [
             {
               'id': 1,
@@ -37,7 +37,7 @@ void main() {
   testWidgets('menampilkan status kosong', (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
-        home: ProdukPage(loadProduk: () async => []),
+        home: ProductScreen(loadProduk: () async => []),
       ),
     );
     await tester.pumpAndSettle();

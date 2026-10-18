@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:f_04_database/screens/product.dart';
+import 'package:f_05_create/screens/product.dart';
 
 void main() {
   testWidgets('menampilkan produk yang dibaca', (WidgetTester tester) async {
